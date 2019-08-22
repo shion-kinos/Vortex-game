@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vortex</title>
+    <style>
+      #machine-shop-trade-list::-webkit-scrollbar {
+        display: none;
+      }
+      #machine-shop-trade-list {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="game" style="font-family: monospace;">
+
+      <canvas id="world" width="384" height="256" style="position: absolute; z-index: 0;"></canvas>
+
+      <div id="hud" style="pointer-events: none; position: absolute; z-index: 1; width: 384px; height: 256px;">
+        <p id="wheat-count" style="position: absolute; margin: 0.5rem; font-size: large; font-weight: bold; color: white;">
+          Wheat: <span id="wheat">0</span>
+        </p>
+        <div id="message-wrapper" style="position: absolute; top: 192px; width: 100%; display: flex; justify-content: center;">
+          <p id="message" style="padding: 0px 4px; background-color: black; text-align: center; color: white;">
+            <!-- message -->
+          </p>
+        </div>
+      </div>
+
+      <div hidden id="interface" style="pointer-events: auto; position: absolute; z-index: 2; width: 192px; height: 128px; padding: 64px 96px;">
+        <div hidden id="machine-shop" style="position: absolute; width: 192px; height: 128px; background-color: silver;">
+          <p style="height: 16px; margin: 8px; text-align: center;">MACHINE SHOP</p>
+          <div id="machine-shop-trade-list" style="height: 88px; overflow: auto;">
+            <p id="buy-condenser" style="margin: 8px; cursor: pointer;">4 wheat<br>-> 1 matter condenser</p>
+          </div>
+        </div>
+        <div hidden id="matter-condenser" style="position: absolute; width: 192px; height: 128px; background-color: silver;">
+          <p style="height: 16px; margin: 8px; text-align: center;">MATTER CONDENSER</p>
+          <div id="matter-condenser-process-list" style="height: 88px; overflow: auto;">
+            <p id="condense-singularity" style="margin: 8px; cursor: pointer;">16 wheat<br>-> 1 singularity</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="main.js"></script>
+    <p style="position: absolute; top: 256px;">
+      Textures taken from Minecraft oCd Texture Pack: <a href="https://www.planetminecraft.com/texture_pack/ocd-pack/">https://www.planetminecraft.com/texture_pack/ocd-pack/</a>
+    </p>
+  </body>
+</html>
